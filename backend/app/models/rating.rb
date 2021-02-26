@@ -1,4 +1,4 @@
 class Rating < ApplicationRecord
-    belongs_to :account
+    belongs_to :sneaker
     validates :stars, presence: true
 end

@@ -3,11 +3,9 @@
 one:
   sneaker_id: 1
   stars: 1.5
-  name: MyString
   description: MyString
 
 two:
   sneaker_id: 1
   stars: 1.5
-  name: MyString
   description: MyString
