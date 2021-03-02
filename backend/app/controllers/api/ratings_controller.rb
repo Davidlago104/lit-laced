@@ -8,7 +8,8 @@ class Api::RatingsController < ApplicationController
 
     def create
         @rating = @sneaker.ratings.new(rating_params)
-
+        @rating.save
+        render json: @rating
     end
 
     def show
