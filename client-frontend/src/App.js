@@ -9,11 +9,11 @@ class App extends React.Component {
     return (
       <div className="App">
         <SneakerContainer/>
-        <SneakerInput/>
+        {/* <SneakerInput/> */}
       </div>
     );
   }
 }
 
 
-export default connect()(App);
+export default App;
