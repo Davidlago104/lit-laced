@@ -14,6 +14,10 @@ class SneakerInput extends React.Component {
     submit = (event) => {
         event.preventDefault()
         this.props.postSneaker(this.state)
+        this.setState({
+            name: '',
+            price: ''
+        })
     }
 
     render() {

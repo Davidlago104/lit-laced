@@ -6,6 +6,7 @@ class Api::SneakersController < ApplicationController
     end
 
     def create
+
         @sneaker = Sneaker.new(sneaker_params)
         if @sneaker.save
             render json: @sneaker
