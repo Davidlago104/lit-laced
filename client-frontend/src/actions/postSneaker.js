@@ -9,5 +9,7 @@ export const postSneaker = (sneakerData) => {
             method: 'POST',
             body: JSON.stringify(sneakerData)
         })
+        .then(resp => resp.json())
+        .then(sneaker => dispatch({type: 'ADD_SNEAKER', payload: sneaker}))
     }
 }
