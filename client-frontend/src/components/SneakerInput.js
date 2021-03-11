@@ -1,5 +1,6 @@
 import React from 'react';
-
+import {connect} from 'react-redux';
+import {postSneaker} from '../actions/postSneaker'
 class SneakerInput extends React.Component {
 
     state = {name: "", price: ""}
@@ -10,8 +11,9 @@ class SneakerInput extends React.Component {
         })
     }
 
-    submit = () => {
-        
+    submit = (event) => {
+        event.preventDefault()
+        this.props.postSneaker(this.state)
     }
 
     render() {
@@ -25,6 +27,7 @@ class SneakerInput extends React.Component {
                     <label>Sneaker Price</label><br/>
                     <input type="text" placeholder="price" name="price" value={this.state.price} onChange={this.change}/>
                     <br/>
+                    <br/>
                     <input type="submit"/>
                 </form>
             </div>
@@ -32,4 +35,4 @@ class SneakerInput extends React.Component {
     }
 }
 
-export default SneakerInput;
+export default connect(null, {postSneaker})(SneakerInput);
