@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import SneakerInput from '../components/SneakerInput'
 import SneakerList from '../components/SneakerList'
 import { fetchSneakers } from '../actions/fetchSneakers';
+import {Route} from 'react-router-dom';
+import Sneaker from '../components/Sneaker';
 
 class SneakerContainer extends React.Component {
 
@@ -13,8 +15,9 @@ class SneakerContainer extends React.Component {
     render() {
         return (
             <div>
-                {/* <SneakerInput/> */}
-                <SneakerList sneakers={this.props.sneakers}/>
+                <Route path='/sneakers/new' component={SneakerInput}/>
+                <Route exact path='/sneakers' render={() => <SneakerList sneakers={this.props.sneakers}/>}/>
+                <Route path='/sneakers/:id' render={(routerProps) => <Sneaker {...routerProps} sneakers={this.props.sneakers}/>}/>
             </div>
         )        
     }

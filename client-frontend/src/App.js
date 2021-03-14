@@ -8,7 +8,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <SneakerInput/>
+        {/* <SneakerInput/> */}
         <SneakerContainer/>
       </div>
     );
