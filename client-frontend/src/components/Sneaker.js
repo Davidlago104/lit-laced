@@ -3,11 +3,11 @@ import React from 'react';
 const Sneaker = (props) => {
     let sneaker = props.sneakers[props.match.params.id - 1]
 
-    console.log(sneaker)
+    console.log(props)
     return(
-       <li>
+       <div>
            {sneaker ? sneaker.name : null} - ${sneaker ? sneaker.price: null}
-       </li>
+       </div>
     )
 }
 
