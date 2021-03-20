@@ -8,7 +8,7 @@ class RatingContainer extends React.Component {
         return (
             <div>
                 <RatingInput/>
-                {/* <Rating ratings={this.props.sneaker.ratings}/> */}
+                <Rating ratings={this.props.sneaker && this.props.sneaker.ratings}/>
             </div>
         )
     }

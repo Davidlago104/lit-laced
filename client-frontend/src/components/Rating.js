@@ -4,7 +4,13 @@ const Ratings = (props) => {
 
     return (
         <div>
-            Ratings
+            {props.ratings && props.ratings.map(rating =>
+                <div key={rating.id}><br/>
+                    Stars: {rating.stars}<br/>
+                    Description:<br/>
+                    {rating.description}
+                </div>
+            )}
         </div>
     )
 }

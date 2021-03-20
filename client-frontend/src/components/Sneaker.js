@@ -4,7 +4,9 @@ import RatingContainer from '../containers/RatingContainer';
 
 const Sneaker = (props) => {
     let sneaker = props.sneakers[props.match.params.id - 1]
+
     console.log(sneaker)
+
     return(
        <div>
            <h3>
