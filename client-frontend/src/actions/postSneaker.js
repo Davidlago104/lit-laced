@@ -13,3 +13,6 @@ export const postSneaker = (sneakerData) => {
         .then(sneaker => dispatch({type: 'ADD_SNEAKER', payload: sneaker}))
     }
 }
+
+// sends POST request from the user and dispatches towards the store and 
+// database in the backend

@@ -11,3 +11,5 @@ export function fetchSneakers() {
     }
 }
 
+// fetches all sneakers from the database and turns the response into JSON 
+// Then dispatches to the store

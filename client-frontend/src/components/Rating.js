@@ -16,3 +16,5 @@ const Ratings = (props) => {
 }
 
 export default Ratings
+// grabs the props from rating database and then mutates towards each
+// individual sneaker id

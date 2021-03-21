@@ -15,3 +15,6 @@ const Sneakers = (props) => {
 }
 
 export default Sneakers
+
+//uses the const sneaker class mutates every sneaker individually along with their id
+//then uses Link from react-router-dom to link every sneaker route

@@ -21,5 +21,4 @@ ReactDOM.render(
   document.getElementById('root'));
 
 
-
-// need to create a store with redux
+// store created and hold app within the router provided react-router-dom

@@ -18,3 +18,7 @@ const Sneaker = (props) => {
 }
 
 export default Sneaker
+
+// grabs sneakers from database and uses sneaker ? sneaker: null to display the 
+// sneaker in case the first time round the sneaker appears null
+// created RatingContainer to grab sneaker props' rating

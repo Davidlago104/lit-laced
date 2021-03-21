@@ -15,3 +15,4 @@ class RatingContainer extends React.Component {
 }
 
 export default RatingContainer
+

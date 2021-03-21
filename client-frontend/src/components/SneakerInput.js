@@ -3,7 +3,10 @@ import {connect} from 'react-redux';
 import {postSneaker} from '../actions/postSneaker'
 class SneakerInput extends React.Component {
 
-    state = {name: "", price: ""}
+    state = {
+        name: "",
+        price: ""
+    }
 
     change = (event) => {
         this.setState({
@@ -11,7 +14,7 @@ class SneakerInput extends React.Component {
         })
     }
 
-    submit = (event) => {
+    submit = (event) => { 
         event.preventDefault()
         this.props.postSneaker(this.state)
         this.setState({
