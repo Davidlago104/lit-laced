@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { postRating } from '../actions/postRatings';
+import { postRatings } from '../actions/postRatings';
 class RatingInput extends React.Component {
 
     state = {
@@ -16,7 +16,7 @@ class RatingInput extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.postRating(this.state, this.props.id)
+        this.props.postRatings(this.state, this.props.sneaker.id)
         this.setState({
             stars: '',
             description: ''
@@ -44,4 +44,4 @@ class RatingInput extends React.Component {
     }
 }
 
-export default connect(null, {postRating})(RatingInput)
+export default connect(null, {postRatings})(RatingInput)

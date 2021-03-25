@@ -3,9 +3,8 @@ import {Redirect} from 'react-router-dom';
 import RatingContainer from '../containers/RatingContainer';
 
 const Sneaker = (props) => {
-    let sneaker = props.sneakers[props.match.params.id - 1]
-
-    console.log(sneaker)
+    
+    let sneaker = props.sneakers.filter(sneaker => sneaker.id == props.match.params.id)[0]
 
     return(
        <div>
