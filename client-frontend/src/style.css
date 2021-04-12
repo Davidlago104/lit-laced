@@ -5,13 +5,14 @@ body {
 }
 
  h2 {
-   background-color: cyan;
+   background-color: white;
    text-align: center;
    padding: 20px;
+   border: 3px solid;
  }
 
 form {
-    background-color: cyan;
+    background-color: white;
     border: 3px solid;
     padding: 20px;
 }
@@ -41,6 +42,6 @@ form {
 }
 
 .rating {
-    background-color: #ee82ee;
+    background-color: white;
     border: 3px solid;
 }
