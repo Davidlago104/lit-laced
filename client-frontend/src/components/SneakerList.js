@@ -5,9 +5,9 @@ import {Route, Link} from 'react-router-dom';
 const Sneakers = (props) => {
 
     return (
-        <div>
+        <div class="list">
             {props.sneakers.map(sneaker => 
-                <li key={sneaker.id}>
+                <li class="button" key={sneaker.id}>
                     <Link to={`/sneakers/${sneaker.id}`}>{sneaker.name}</Link>
                 </li>)}
         </div>

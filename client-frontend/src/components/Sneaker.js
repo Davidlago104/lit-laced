@@ -8,9 +8,9 @@ const Sneaker = (props) => {
 
     return(
        <div>
-           <h3>
+           <h2>
             {sneaker ? sneaker.name : null} - ${sneaker ? sneaker.price: null}
-           </h3>
+           </h2>
            <RatingContainer sneaker={sneaker}/>
        </div>
     )

@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {postSneaker} from '../actions/postSneaker'
+import {style} from '../style.css';
 class SneakerInput extends React.Component {
 
     state = {
@@ -25,7 +26,7 @@ class SneakerInput extends React.Component {
 
     render() {
         return (
-            <div>
+            <div class="form">
                 <form onSubmit={this.submit}>
                     <label>Sneaker Name</label><br/>
                     <input type="text" placeholder="name" name="name" value={this.state.name} onChange={this.change}/>
