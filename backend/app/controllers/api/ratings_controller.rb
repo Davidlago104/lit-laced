@@ -1,4 +1,4 @@
-
+require  'pry'
 class Api::RatingsController < ApplicationController
     before_action :set_sneaker
 
@@ -19,7 +19,10 @@ class Api::RatingsController < ApplicationController
     end
 
     def destroy
-        # Not gonna get rid of reviews just yet
+        @rating = Rating.find(params["id"])
+        @sneaker = Sneaker.find(@rating.sneaker_id)
+        @rating.destroy
+        render json: @sneaker
     end
 
     private

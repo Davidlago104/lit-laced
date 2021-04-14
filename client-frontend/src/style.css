@@ -1,6 +1,6 @@
 body {
     background-image: url(https://i.pinimg.com/originals/e0/f5/cd/e0f5cdb017a1f333cbb0137a84b5cca5.jpg);
-    background-size: 900px;
+    background-size: 1900px;
     background-repeat: repeat;
 }
 
@@ -18,21 +18,22 @@ form {
 }
 
 .button {
-  background-color:rgb(244, 207, 98); /* Green */
+  background-color: #228b22;
   border: none;
+  font: bold 11px Arial;
   border-collapse: separate;
   border-spacing: 15px;
   color: white;
   padding: 15px 32px;
   text-align: center;
-  text-decoration: none;
   display: inline-block;
-  font-size: 24px;
+  font-size: 18px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-.button2:hover {
+.button:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  cursor: pointer;
 }
 
 .button:active {
