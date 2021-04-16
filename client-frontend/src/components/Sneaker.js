@@ -1,6 +1,8 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
 import RatingContainer from '../containers/RatingContainer';
+import { Route, Link } from "react-router-dom";
+
 
 const Sneaker = (props) => {
     
@@ -8,6 +10,9 @@ const Sneaker = (props) => {
 
     return(
        <div>
+           <Link to={"/sneakers"}>
+               <button class="button">All Sneakers</button>
+            </Link>
            <h2>
             {sneaker ? sneaker.name : null} - ${sneaker ? sneaker.price: null}
            </h2>
