@@ -20,12 +20,6 @@ class Api::SneakersController < ApplicationController
         render json: @sneaker
     end
 
-    def destroy
-        @sneaker = Sneaker.find(params[:id])
-        @sneaker.destroy
-        puts "Sneaker deleted!"
-    end
-
     private
 
     def sneaker_params

@@ -1,4 +1,3 @@
-require  'pry'
 class Api::RatingsController < ApplicationController
     before_action :set_sneaker
 

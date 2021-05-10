@@ -1,5 +1,5 @@
 import React from 'react';
-import  {connect}  from 'react-redux';
+import {connect}  from 'react-redux';
 import {deleteRating} from '../actions/deleteRating'
 
 const Ratings = (props) => {

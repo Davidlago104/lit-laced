@@ -5,13 +5,19 @@ import {Route, Link} from 'react-router-dom';
 const Sneakers = (props) => {
 
     return (
-        <div class="list">
-            {props.sneakers.map(sneaker => 
-                <li class="button" key={sneaker.id}>
-                    <Link to={`/sneakers/${sneaker.id}`}>{sneaker.name}</Link>
-                </li>)}
-        </div>
-    )
+      <div class="list">
+        <h3 class="">
+          <Link to={"/sneakers/new"}>
+            <button class="button">Create a Sneaker!</button>
+          </Link>
+        </h3>
+        {props.sneakers.map((sneaker) => (
+          <li class="button" key={sneaker.id}>
+            <Link to={`/sneakers/${sneaker.id}`}>{sneaker.name}</Link>
+          </li>
+        ))}
+      </div>
+    );
 }
 
 export default Sneakers
