@@ -9,13 +9,13 @@ class SneakerInput extends React.Component {
         price: ""
     }
 
-    change = (event) => {
+    change = event => {
         this.setState({
             [event.target.name]: event.target.value 
         })
     }
 
-    submit = (event) => { 
+    submit = event => { 
         event.preventDefault()
         this.props.postSneaker(this.state)
         this.setState({
@@ -44,3 +44,6 @@ class SneakerInput extends React.Component {
 }
 
 export default connect(null, {postSneaker})(SneakerInput);
+
+//javascript functional component, vs class component review
+

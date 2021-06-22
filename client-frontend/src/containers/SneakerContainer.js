@@ -33,3 +33,5 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps, {fetchSneakers})(SneakerContainer);
 
 //contains all sneaker props and helps create pathing using react-router-dom
+
+// what is shorthand?

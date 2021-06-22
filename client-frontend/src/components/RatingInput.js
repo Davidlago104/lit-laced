@@ -1,6 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { postRatings } from '../actions/postRatings';
+import { deleteRating } from "../actions/deleteRating";
+
 class RatingInput extends React.Component {
 
     state = {
@@ -43,5 +45,16 @@ class RatingInput extends React.Component {
         )
     }
 }
-
+// render is happening within a moment of the lifecycle, look into the comp life cycle
+// rendering vs re-rendering, class vs function, life cycle vs none
+// sate and lifecycle (setState)
+// arrow function gets assigned when defined
+// reg function gets assigned when called upon
+// setstate vs. this.state  - 
 export default connect(null, {postRatings})(RatingInput)
+
+
+//comfortable with local state, this.setstate is working and handling events
+
+// create a search bar that filters the sneakers which filtering the props
+// add some type of reducer action (delete) a filter of sort

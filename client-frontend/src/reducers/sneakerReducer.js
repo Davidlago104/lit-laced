@@ -19,13 +19,11 @@ export default function sneakerReducer(state = {sneakers: []}, action) {
         return { ...state, sneakers: sneakers };
 
       case 'DELETE_RATING':
+        
         let sneakers2 = state.sneakers.map((sneaker) => {
-          if (sneaker.id === action.payload.id) {
-            return action.payload;
-          } else {
-            return sneaker
-          }
+          return sneaker.ratings.filter((rating) => rating.id !== action.payload)
         });
+
         return { ...state, sneakers: sneakers2 };
 
       default:

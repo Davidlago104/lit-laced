@@ -1,11 +1,14 @@
 import React from 'react';
 import {connect}  from 'react-redux';
-import {deleteRating} from '../actions/deleteRating'
+import { deleteRating } from "../actions/deleteRating";
+import {RatingInput} from '../components/RatingInput';
 
 const Ratings = (props) => {
 
-    const handleDelete  = (rating) =>  {
-        props.deleteRating(rating.id, rating.sneaker_id)
+
+    const handleDelete = (rating) => {
+        console.log(rating)
+        props.deleteRating(rating.id, rating.sneaker_id);
     }
 
     return (
@@ -26,3 +29,7 @@ const Ratings = (props) => {
 export default connect(null, {deleteRating})(Ratings)
 // grabs the props from rating database and then mutates towards each
 // individual sneaker id
+
+//props.ratings, where did they come from?
+
+//render one component from another, where do you put that code

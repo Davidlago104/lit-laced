@@ -13,3 +13,5 @@ export function fetchSneakers() {
 
 // fetches all sneakers from the database and turns the response into JSON 
 // Then dispatches to the store
+
+//create logs before dispatch and after to see where the log is called upon in the console
