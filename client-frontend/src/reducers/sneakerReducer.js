@@ -24,7 +24,7 @@ export default function sneakerReducer(state = {sneakers: []}, action) {
           sneaker.ratings = sneaker.ratings.filter((rating) => rating.id !== action.payload)
           return sneaker
         });
-        debugger
+
         return { ...state, sneakers: sneakers2 };
 
       default:

@@ -1,7 +1,7 @@
 import React from 'react';
 import Sneaker from './Sneaker';
 import {Route, Link} from 'react-router-dom';
-
+import SneakerListItem from '../components/SneakerListItem';
 const Sneakers = (props) => {
 
     return (
@@ -12,10 +12,9 @@ const Sneakers = (props) => {
           </Link>
         </h3>
         {props.sneakers.map((sneaker) => (
-          <li class="button" key={sneaker.id}>
-            <Link to={`/sneakers/${sneaker.id}`}>{sneaker.name}</Link>
-          </li>
-        ))}
+          <SneakerListItem sneakers = {sneaker} /> 
+        ))
+            }
       </div>
     );
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {postSneaker} from '../actions/postSneaker'
 import {style} from '../style.css';
+
 class SneakerInput extends React.Component {
 
     state = {
