@@ -2,7 +2,7 @@
 export const postRatings = (rating, sneakerId) => {
 
     return (dispatch) => {
-      let URL = `http://localhost:3000/api/sneakers/${sneakerId}/ratings`
+      const URL = `http://localhost:3000/api/sneakers/${sneakerId}/ratings`
         fetch(URL, {
           method: "POST",
           headers: {
