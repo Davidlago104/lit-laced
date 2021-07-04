@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 const Sneaker = (props) => {
     
     let sneaker = props.sneakers.filter(sneaker => sneaker.id == props.match.params.id)[0]
-
+    
     return (
       <div>
         <Link to={"/sneakers"}>

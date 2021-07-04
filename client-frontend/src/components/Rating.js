@@ -7,7 +7,6 @@ const Ratings = (props) => {
 
 
     const handleDelete = (rating) => {
-        console.log(rating)
         props.deleteRating(rating.id, rating.sneaker_id);
     }
 

@@ -6,34 +6,40 @@ import { fetchSneakers } from '../actions/fetchSneakers';
 import {Route} from 'react-router-dom';
 import {Switch} from 'react-router-dom';
 import Sneaker from '../components/Sneaker';
+import SneakerListItem from "../components/SneakerListItem";
+import {useState} from  'react';
 
 class SneakerContainer extends React.Component {
+    constructor(props) {
+        super(props)
+        
+        this.state = {
+            search: ""
+        }
+    }
+    
+    editSearchTerm = (e)  => {
+        this.setState({search: e.target.value}, 
+        ()=> this.setState(this.dynamicSearch()))
+    }
 
-    componentDidMount(){
-        this.props.fetchSneakers()
+    dynamicSearch = () => {
+        return this.props.sneakers.filter(sneaker => sneaker.name.toLowerCase().includes(this.state.search.toLowerCase()))
     }
 
     render() {
         return (
             <div>
-                <Switch>
+                <input type="text" value= {this.state.search} placeholder="enter sneaker name here!" onChange={this.editSearchTerm}/>
                 <Route exact path='/sneakers/:id' render={(routerProps) => <Sneaker {...routerProps} sneakers={this.props.sneakers}/>}/>
                 <Route exact path='/sneakers/new' component={SneakerInput}/>
-                <Route exact path='/sneakers' render={() => <SneakerList sneakers={this.props.sneakers}/>}/>
-                </Switch>
+                <Route exact path='/sneakers' render={() => <SneakerList sneakers={this.dynamicSearch()}/>}/>
             </div>
         )        
     }
 }
 
-const mapStateToProps = state => {
-
-    return {
-        sneakers: state.sneakers
-    }
-}
-
-export default connect(mapStateToProps, {fetchSneakers})(SneakerContainer);
+export default connect(null, {fetchSneakers})(SneakerContainer);
 
 //contains all sneaker props and helps create pathing using react-router-dom
 

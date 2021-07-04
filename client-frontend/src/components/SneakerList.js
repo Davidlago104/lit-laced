@@ -2,24 +2,33 @@ import React from 'react';
 import Sneaker from './Sneaker';
 import {Route, Link} from 'react-router-dom';
 import SneakerListItem from '../components/SneakerListItem';
-const Sneakers = (props) => {
+
+
+class Sneakers extends React.Component {
+  
+  render (){
+    const refreshPage = () => {
+      window.location.reload()
+    }
 
     return (
+
       <div class="list">
         <h3 class="">
           <Link to={"/sneakers/new"}>
             <button class="button">Create a Sneaker!</button>
           </Link>
         </h3>
-        {props.sneakers.map((sneaker) => (
+        {this.props.sneakers.map((sneaker) => (
           <SneakerListItem sneakers = {sneaker} /> 
         ))
             }
       </div>
-    );
+      )
+    ;
+    }
 }
 
 export default Sneakers
 
-//uses the const sneaker class mutates every sneaker individually along with their id
-//then uses Link from react-router-dom to link every sneaker route
+//search bar, as typing out it should re-render, should re render the letters

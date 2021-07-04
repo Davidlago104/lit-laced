@@ -7,16 +7,11 @@ class SneakerListItem extends React.Component {
 
   //create a initial state set to 0
   state = {
-    likes: 0,
-    show: true
+    likes: 0
   }
 
   handleClick = () => {
-    this.setState({ likes: this.state.likes + 1})
-  }
-
-  showLike = () => {
-    this.setState({show: !this.state.show})
+    this.setState({ likes: this.state.likes + 1}) //what bug could this cause?
   }
 
   render() {
@@ -30,7 +25,7 @@ class SneakerListItem extends React.Component {
           Like
         </button>
         <div className="likes">
-        {this.state.show ? <h2>{this.state.likes}</h2> : ""}
+        <h2>{this.state.likes}</h2>
         </div>
       </li>
     );
@@ -40,3 +35,6 @@ class SneakerListItem extends React.Component {
 // 1 and every refresh it should reset.
 
 export default SneakerListItem;
+
+// add an input field towards the top, allows a user to enter a number, input field incremenet by that much, and
+// 
