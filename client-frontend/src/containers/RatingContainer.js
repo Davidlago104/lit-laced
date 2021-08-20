@@ -1,56 +1,39 @@
 import React from 'react';
 import RatingInput from '../components/RatingInput';
+import { connect } from "react-redux";
 import Rating from '../components/Rating';
 import sneakerReducer from '../reducers/sneakerReducer';
+import { sortRating } from "../actions/sortRating";
+
 class RatingContainer extends React.Component {
- constructor(props) {
-    super(props)
-     this.state = {
-         ratings: this.ratings
- }
-};
-
-    displayed = () => {
-        this.setState(this.display())
-    }
-
-    display = () => {
-       return this.setState(this.props.sneaker.ratings)
-    }
-    // componentDidUpdate(prevProps) {
-    //     if (this.props.sneaker !== prevProps.sneaker) {
-    //         this.setState({ ratings: this.props.sneaker.ratings });
-    //         }
-    //     }
-
-  handleClick = () => {
-     this.setState({ratings: this.props.sneaker.ratings.sort((a, b) => a.stars - b.stars)})
+  constructor(props) {
+    super(props);
+    this.state = {
+      sortedSneakers: []
+    };
   }
-  
-//   sortRatings = () => {
-    
-//       this.setState((prevState) => ({
-//         ratings: [...prevState.ratings].sort((a, b) => a.stars - b.stars
-//         )}));
-//   }
+
+  handleSort = () => {
+    this.props.sortRating(this.props.sneaker.id)
+  }
 
   render() {
-      console.log(this.state.ratings)
-      return (
+    return (
       <div>
-        <button class="button" onClick={() => this.handleClick()}>Sort by rating!</button>
+        <button
+          class="button"
+          onClick={this.handleSort}>
+          Sort by rating!
+        </button>
         <RatingInput sneaker={this.props.sneaker} />
-        {/* <Rating ratings={this.props.sneaker && this.state.ratings} /> */}
-        <Rating ratings={this.props.sneaker && this.state.ratings} />
+        <Rating ratings={this.state.sortedbyRating ? this.state.sortedSneakers : this.props.sneaker.ratings} />
+        {/* <Rating ratings={this.props.sneaker.ratings} /> */}
       </div>
     );
   }
 }
 
-export default RatingContainer
+export default connect(null, {sortRating})(RatingContainer);
+
 
 // button uses sort, button should be used to sort the rating by stars
-
-//anti pattern gone, without the props, get rid of refresh
-// blog post state vs props
-// schedule meeting on concepts of how it was done

@@ -3,6 +3,7 @@ import {connect}  from 'react-redux';
 import { deleteRating } from "../actions/deleteRating";
 import {RatingInput} from '../components/RatingInput';
 
+
 const Ratings = (props) => {
 
 

@@ -1,16 +1,15 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { postRatings } from '../actions/postRatings';
-import { deleteRating } from "../actions/deleteRating";
+// import { deleteRating } from "../actions/deleteRating";
 
 class RatingInput extends React.Component {
-
     state = {
         stars: '',
         description: ''
     }
-
-    handleChange = (event) => {
+    // pull and apply. bind. 
+    handleChange (event){
         this.setState({
             [event.target.name]: event.target.value
         })

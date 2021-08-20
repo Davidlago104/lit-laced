@@ -7,10 +7,6 @@ import SneakerListItem from '../components/SneakerListItem';
 class Sneakers extends React.Component {
   
   render (){
-    const refreshPage = () => {
-      window.location.reload()
-    }
-
     return (
 
       <div class="list">

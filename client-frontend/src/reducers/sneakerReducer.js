@@ -14,7 +14,7 @@ export default function sneakerReducer(state = {sneakers: []}, action) {
             return action.payload;
           } else {
             return sneaker
-          } // refactor into using find instead of map
+          }
         });
         return { ...state, sneakers: sneakers };
 
@@ -23,9 +23,17 @@ export default function sneakerReducer(state = {sneakers: []}, action) {
         let sneakers2 = state.sneakers.map((sneaker) => {
           sneaker.ratings = sneaker.ratings.filter((rating) => rating.id !== action.payload)
           return sneaker
-        }); // refactor into using only filter
+        });
 
         return { ...state, sneakers: sneakers2 };
+
+      case 'SORT_RATING':
+          const sortRatings = state.sneakers.map((sneaker)=>{
+            sneaker.ratings.sort((a,b) => a.stars - b.stars && action.payload)
+            return sneaker
+          })
+          
+          return {...state, sneakers: sortRatings}
 
       default:
         return state;

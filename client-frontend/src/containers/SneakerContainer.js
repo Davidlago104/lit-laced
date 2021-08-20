@@ -8,11 +8,11 @@ import {Switch} from 'react-router-dom';
 import Sneaker from '../components/Sneaker';
 import SneakerListItem from "../components/SneakerListItem";
 import {useState} from  'react';
+import Counting from '../components/counting.js'
 
 class SneakerContainer extends React.Component {
     constructor(props) {
         super(props)
-        
         this.state = {
             search: ""
         }
@@ -24,14 +24,17 @@ class SneakerContainer extends React.Component {
     }
 
     dynamicSearch = () => {
-        return this.props.sneakers.filter(sneaker => sneaker.name.toLowerCase().includes(this.state.search.toLowerCase()))
+        return this.props.sneakers.filter(sneaker => 
+            sneaker.name.toLowerCase().includes(this.state.search.toLowerCase())
+            )
     }
 
     render() {
         return (
             <div>
                 <input type="text" value= {this.state.search} placeholder="enter sneaker name here!" onChange={this.editSearchTerm}/>
-                <Route exact path='/sneakers/:id' render={(routerProps) => <Sneaker {...routerProps} sneakers={this.props.sneakers}/>}/>
+                {/* <Counting /> */}
+                <Route path='/sneakers/:id' render={(routerProps) => <Sneaker {...routerProps} sneakers={this.props.sneakers}/>}/>
                 <Route exact path='/sneakers/new' component={SneakerInput}/>
                 <Route exact path='/sneakers' render={() => <SneakerList sneakers={this.dynamicSearch()}/>}/>
             </div>
@@ -40,7 +43,3 @@ class SneakerContainer extends React.Component {
 }
 
 export default connect(null, {fetchSneakers})(SneakerContainer);
-
-//contains all sneaker props and helps create pathing using react-router-dom
-
-// what is s

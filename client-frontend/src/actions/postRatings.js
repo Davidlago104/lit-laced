@@ -12,5 +12,6 @@ export const postRatings = (rating, sneakerId) => {
         })
         .then(resp => resp.json())
         .then(rating => dispatch({type: "ADD_RATING", payload: rating}));
+    
     }
 }
