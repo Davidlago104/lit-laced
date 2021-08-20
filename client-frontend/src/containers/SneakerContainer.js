@@ -33,7 +33,7 @@ class SneakerContainer extends React.Component {
         return (
             <div>
                 <input type="text" value= {this.state.search} placeholder="enter sneaker name here!" onChange={this.editSearchTerm}/>
-                {/* <Counting /> */}
+                <Counting />
                 <Route path='/sneakers/:id' render={(routerProps) => <Sneaker {...routerProps} sneakers={this.props.sneakers}/>}/>
                 <Route exact path='/sneakers/new' component={SneakerInput}/>
                 <Route exact path='/sneakers' render={() => <SneakerList sneakers={this.dynamicSearch()}/>}/>
