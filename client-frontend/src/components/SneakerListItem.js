@@ -5,13 +5,13 @@ import Sneaker from "./Sneaker";
 
 class SneakerListItem extends React.Component {
 
-  //create a initial state set to 0
+
   state = {
     likes: 0
   }
 
   handleClick = () => {
-    this.setState({ likes: this.state.likes + 1}) //what bug could this cause?
+    this.setState({ likes: this.state.likes + 1})
   }
 
   render() {
@@ -25,16 +25,12 @@ class SneakerListItem extends React.Component {
           Like
         </button>
         <div className="likes">
-        <h2>{this.state.likes}</h2>
+        <h2>{this.state.likes}</h2> 
         </div>
-      </li>
+      </li> 
     );
     }
 }
-// we should see a like button, but the like button should see 0, everytime its been liked it should be incremented by
-// 1 and every refresh it should reset.
 
 export default SneakerListItem;
 
-// add an input field towards the top, allows a user to enter a number, input field incremenet by that much, and
-// 
